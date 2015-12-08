@@ -274,10 +274,10 @@ PHP_FUNCTION(ip2country) {
         if (full) {
                 array_init(return_value);
 
-                add_assoc_string(return_value, "code", country->code, 1);
-                add_assoc_string(return_value, "name", country->name, 1);
+                add_assoc_string(return_value, "code", country->code);
+                add_assoc_string(return_value, "name", country->name);
         } else {
-                RETURN_STRING(country->code, 1);
+                RETURN_STRING(country->code);
         }
 }
 
@@ -299,7 +299,7 @@ PHP_FUNCTION(code2country) {
         if (country == NULL) {
                 RETURN_NULL();
         } else {
-                RETURN_STRING(country->name, 1);
+                RETURN_STRING(country->name);
         }
 }
 
